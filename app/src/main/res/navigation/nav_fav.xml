@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_fav"
+    app:startDestination="@id/favsFragment">
+    <fragment
+        android:id="@+id/favsFragment"
+        android:name="com.example.multimodulemvvm.ui.fragments.favs.FavsFragment"
+        android:label="FavsFragment" />
+</navigation>

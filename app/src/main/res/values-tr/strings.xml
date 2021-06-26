@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MultiModuleMVVM</string>
+    <string name="menu_item_home">Ev</string>
+    <string name="menu_item_favs">Favoriler</string>
+</resources>
