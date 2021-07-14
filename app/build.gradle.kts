@@ -52,6 +52,8 @@ dependencies {
     with(Dependencies) {
         //Modules
         implementation(project(Modules.common))
+        implementation(project(Modules.domain))
+        implementation(project(Modules.data))
 
         implementation(kotlinStdlib)
         implementation(core)
@@ -69,5 +71,12 @@ dependencies {
         // Navigation
         implementation(navigation)
         implementation(navigationFragment)
+
+
+        // Retrofit
+        implementation(retrofit)
+        implementation(convertorGson)
+        implementation(okHtttp)
+        implementation(retrofitCoroutineCallAdapter)
     }
 }

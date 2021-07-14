@@ -45,6 +45,7 @@ dependencies {
     with(Dependencies) {
         //Modules
         implementation(project(Modules.common))
+        implementation(project(Modules.data))
 
         implementation(kotlinStdlib)
         implementation(core)
@@ -54,12 +55,13 @@ dependencies {
 
 
         // Hilt
-        implementation("com.google.dagger:hilt-android:2.35")
-        kapt("com.google.dagger:hilt-compiler:2.35")
+        implementation(hilt)
+        kapt(hiltCompiler)
 
         //Coroutines
         implementation(coroutines)
 
-        implementation(project(Modules.data))
+        //Paging
+        implementation(paging)
     }
 }

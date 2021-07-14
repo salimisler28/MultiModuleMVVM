@@ -20,8 +20,8 @@ android {
         // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         //consumerProguardFiles "consumer-rules.pro"
 
-        //buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/3/"'
-        //buildConfigField "String", "API_KEY", '"4842ed0eaf02963b0c0e15ceebf1ff5d"'
+        buildConfigField ("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+        buildConfigField ("String", "API_KEY", "\"4842ed0eaf02963b0c0e15ceebf1ff5d\"")
     }
 
     buildTypes {
@@ -72,5 +72,8 @@ dependencies {
 
         //Coroutines
         implementation(coroutines)
+
+        //Paging
+        implementation(paging)
     }
 }
