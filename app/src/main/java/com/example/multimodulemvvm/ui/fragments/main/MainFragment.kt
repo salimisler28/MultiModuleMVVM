@@ -7,13 +7,13 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.multimodulemvvm.R
+import com.example.multimodulemvvm.base.BaseFragment
 import com.example.multimodulemvvm.databinding.FragmentMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainFragment : Fragment(R.layout.fragment_main) {
+class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     lateinit var navController: NavController
     lateinit var navHostFragment: NavHostFragment
-    private var binding: FragmentMainBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
