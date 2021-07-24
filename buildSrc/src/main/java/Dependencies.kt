@@ -22,4 +22,6 @@ object Dependencies {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.versionFragmentKtx}"
     const val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.versionNavigation}"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.versionNavigationFragment}"
+    const val paging ="androidx.paging:paging-runtime:${Versions.versionPaging}"
+    const val timber = "com.jakewharton.timber:timber:${Versions.versionTimber}"
 }

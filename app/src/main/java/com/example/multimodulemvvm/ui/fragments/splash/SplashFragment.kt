@@ -18,7 +18,13 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSplashBinding.bind(view)
+    }
 
+    override fun initListeners() {
+
+    }
+
+    override fun listenObservers() {
         viewModel.data.observe(viewLifecycleOwner) {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
@@ -30,6 +36,5 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
                     binding?.txTime?.text = it.data.toString()
                 }
             }
-        }
-    }
+        }    }
 }

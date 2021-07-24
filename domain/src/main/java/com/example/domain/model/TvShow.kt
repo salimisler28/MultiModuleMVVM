@@ -1,8 +1,9 @@
-package com.example.data.network.dto
+package com.example.domain.model
 
 import com.example.common.Dto
+import com.example.common.Model
 
-data class TvShowDto(
+data class TvShow(
     var backdrop_path: String? = null,
     var first_air_date: String? = null,
     var genre_ids: List<String>? = null,
@@ -16,4 +17,4 @@ data class TvShowDto(
     var poster_path: String? = null,
     var vote_average: Double? = null,
     var vote_count: Int? = null
-): Dto
+): Model

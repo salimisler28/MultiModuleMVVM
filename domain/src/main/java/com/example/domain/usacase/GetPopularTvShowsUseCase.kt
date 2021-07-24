@@ -1,22 +1,43 @@
 package com.example.domain.usacase
 
+import androidx.paging.PagingData
 import com.example.common.Resource
-import com.example.data.datasources.remote.TvShowsRemoteDataSource
-import com.example.data.network.dto.TvShowDto
-import com.example.data.network.response.GetPopularTvShowsResponse
-import com.example.data.network.service.TvShowsApi
+import com.example.data.network.request.GetPopularTvShowsRequest
+import com.example.data.repo.TvShowsRepo
+import com.example.domain.mapper.TvShowMapper
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class GetPopularTvShowsUseCase @Inject constructor(
-    private val remoteDataSource: TvShowsRemoteDataSource
+    private val tvShowsRepo: TvShowsRepo,
+    private val tvShowMapper: TvShowMapper
 ) {
-    fun getPopularTvShows() = flow<Resource<GetPopularTvShowsResponse>> {
+    suspend fun getPopularTvShows(
+        tvShowsRequest: GetPopularTvShowsRequest
+    ) = tvShowsRepo
+        .getPopularTvShows(tvShowsRequest)
+        .map { data ->
+            return@map data.map {
+                tvShowMapper.mapListDtoToListModel(data.data?.results)
+            }
+        }
+        .flowOn(Dispatchers.IO)
+}
 
-    }.onStart {
-        emit(Resource.loading())
-    }.flowOn(Dispatchers.IO)
+fun <T, A> Resource<T>.map(func: (T?) -> A): Resource<A> {
+    return when (this.status) {
+        Resource.Status.LOADING -> {
+            Resource.loading()
+        }
+
+        Resource.Status.ERROR -> {
+            Resource.error(message = this.message)
+        }
+
+        Resource.Status.SUCCESS -> {
+            Resource.success(data = func.invoke(this.data))
+        }
+    }
 }

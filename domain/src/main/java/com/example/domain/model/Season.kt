@@ -1,8 +1,8 @@
-package com.example.data.network.dto
+package com.example.domain.model
 
-import com.example.common.Dto
+import com.example.common.Model
 
-data class SeasonDto(
+data class Season(
     var air_date: String? = null,
     var episode_count: Int? = null,
     var id: Int? = null,
@@ -10,4 +10,4 @@ data class SeasonDto(
     var overview: String? = null,
     var poster_path: String? = null,
     var season_number: Int? = null,
-): Dto
+) : Model

@@ -78,5 +78,8 @@ dependencies {
         implementation(convertorGson)
         implementation(okHtttp)
         implementation(retrofitCoroutineCallAdapter)
+
+        // Timber
+        implementation(timber)
     }
 }

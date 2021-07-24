@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.BuildConfig
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -21,7 +22,7 @@ object NetworkModule {
             gsonConverterFactory: GsonConverterFactory,
             coroutineCallAdapterFactory: CoroutineCallAdapterFactory
     ) = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .addCallAdapterFactory(coroutineCallAdapterFactory)
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)

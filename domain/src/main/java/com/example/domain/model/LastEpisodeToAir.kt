@@ -1,4 +1,6 @@
-package com.example.data.network.dto
+package com.example.domain.model
+
+import com.example.common.Model
 
 data class LastEpisodeToAir(
     var air_date: String? = null,
@@ -11,4 +13,4 @@ data class LastEpisodeToAir(
     var still_path: String? = null,
     var vote_average: Double? = null,
     var vote_count: Int? = null,
-)
+): Model

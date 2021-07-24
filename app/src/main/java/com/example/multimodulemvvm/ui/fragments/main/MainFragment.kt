@@ -25,4 +25,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         val bottomNavigationView = binding?.bottomNavigationView as BottomNavigationView
         bottomNavigationView.setupWithNavController(navController)
     }
+
+    override fun initListeners() {
+
+    }
+
+    override fun listenObservers() {
+    }
 }

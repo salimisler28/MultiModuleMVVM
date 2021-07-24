@@ -19,10 +19,17 @@ class FavsFragment : BaseRootFragment<FragmentFavsBinding>(R.layout.fragment_fav
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFavsBinding.bind(view)
+        initListeners()
+    }
 
+    override fun initListeners() {
         binding?.textView?.setOnClickListener {
             navigateChildFragment(R.id.action_mainFragment_to_detailFragment)
         }
+    }
+
+    override fun listenObservers() {
+
     }
 
 }

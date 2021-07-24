@@ -17,4 +17,6 @@ object Versions {
     const val versionFragmentKtx = "1.4.0-alpha03"
     const val versionNavigation = "2.4.0-alpha03"
     const val versionNavigationFragment = "2.4.0-alpha03"
+    const val versionPaging = "3.0.0"
+    const val versionTimber = "4.7.1"
 }
