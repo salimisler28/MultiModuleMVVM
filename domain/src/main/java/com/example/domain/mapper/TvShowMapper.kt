@@ -18,7 +18,7 @@ class TvShowMapper @Inject constructor() : IMapper<TvShowDto, TvShow> {
             original_name = dto?.original_name,
             overview = dto?.overview,
             popularity = dto?.popularity,
-            poster_path = dto?.poster_path,
+            poster_path = "https://www.themoviedb.org/t/p/w1280/${dto?.poster_path}",
             vote_average = dto?.vote_average,
             vote_count = dto?.vote_count
         )

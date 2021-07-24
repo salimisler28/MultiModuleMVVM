@@ -30,12 +30,9 @@ abstract class BaseRootFragment<B>(
         }
     }
 
-    fun navigateChildFragment(action: Int, data: String?) {
+    fun navigateChildFragment(action: Int, data: Bundle?) {
         if (mainFragment is MainFragment) {
-            val bundle = Bundle().apply {
-                putString("data", data)
-            }
-            mainFragment.findNavController().navigate(action, bundle)
+            mainFragment.findNavController().navigate(action, data)
         }
     }
 }

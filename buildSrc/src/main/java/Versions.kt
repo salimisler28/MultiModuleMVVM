@@ -19,4 +19,6 @@ object Versions {
     const val versionNavigationFragment = "2.4.0-alpha03"
     const val versionPaging = "3.0.0"
     const val versionTimber = "4.7.1"
+    const val versionGlide = "4.12.0"
+    const val versionCoil = "1.3.0"
 }

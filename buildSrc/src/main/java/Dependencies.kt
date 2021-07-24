@@ -24,4 +24,7 @@ object Dependencies {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.versionNavigationFragment}"
     const val paging ="androidx.paging:paging-runtime:${Versions.versionPaging}"
     const val timber = "com.jakewharton.timber:timber:${Versions.versionTimber}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.versionGlide}}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.versionGlide}"
+    const val coil = "io.coil-kt:coil:${Versions.versionCoil}"
 }

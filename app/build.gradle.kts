@@ -81,5 +81,8 @@ dependencies {
 
         // Timber
         implementation(timber)
+
+        // Coil
+        implementation(coil)
     }
 }
